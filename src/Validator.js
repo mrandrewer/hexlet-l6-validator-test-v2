@@ -1,4 +1,5 @@
 import FunctionSchema from './FunctionSchema.js';
+import ObjectSchema from './ObjectSchema.js';
 import StringSchema from './StringSchema.js';
 
 class Validator {
@@ -8,6 +9,10 @@ class Validator {
 
   function() {
     return new FunctionSchema();
+  }
+
+  object() {
+    return new ObjectSchema([(v) => typeof v === 'object']);
   }
 }
 
